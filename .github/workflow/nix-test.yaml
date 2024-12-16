@@ -1,0 +1,17 @@
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4s
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Print nix version
+        uses: workflow/nix-shell-action@v3.4.0
+        with:
+          flakes-from-devshell: true
+          script: |
+            
+
