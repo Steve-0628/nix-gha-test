@@ -13,5 +13,6 @@ jobs:
         with:
           flakes-from-devshell: true
           script: |
+            echo "here is the node version" && node --version
             
 
